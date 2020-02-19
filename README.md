@@ -2,7 +2,7 @@
 
 ## Open project
 - Remote [DEMO LINK](https://gestap.github.io/SoftIndex//)
-- Locale
+- Locally
     1. `Fork` the repository
     2. `Clone` the forked repo
     3. Run `npm install` to install the dependencies
