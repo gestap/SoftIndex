@@ -2,9 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-// hooks
-import { makeStyles } from '@material-ui/core/styles';
-
 // components
 import {
   Table,
@@ -18,6 +15,7 @@ import {
 } from '@material-ui/core';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 import { TableHeader } from './TableHeader';
+import { styles } from './style';
 
 // helpers
 import { sortTable } from '../../helpers';
@@ -25,24 +23,12 @@ import { sortTable } from '../../helpers';
 // interface
 import { formField } from '../../typedefs';
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-  row: {
-    cursor: 'pointer',
-    '&:hover': {
-      backgroundColor: '#f5f5f5',
-      transition: 'background-color 0.35s cubic-bezier(.3, .1, .3, 1)',
-    },
-  },
-});
-
+// component
 export const SimpleTable = ({ form, setForm }) => {
   const [order, setOrder] = useState('asc');
   const [orderBy, setOrderBy] = useState('firstName');
   const [rows, setRows] = useState([]);
-  const classes = useStyles();
+  const classes = styles();
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';

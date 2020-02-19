@@ -4,13 +4,11 @@ import { Formik, Form, Field } from 'formik';
 import { uuid } from 'uuidv4';
 import PropTypes from 'prop-types';
 
-// hooks
-import { makeStyles } from '@material-ui/core/styles';
-
 // components
 import { Button, MenuItem, Box, Tooltip } from '@material-ui/core';
 import { PhoneField } from '../PhoneField';
 import { TextField } from '../TextField';
+import { styles } from './style';
 
 // helpers
 import { FormSchema } from '../../helpers';
@@ -18,23 +16,9 @@ import { FormSchema } from '../../helpers';
 // interface
 import { formField } from '../../typedefs';
 
-const useStyles = makeStyles({
-  select: {
-    minWidth: 300,
-  },
-  box: {
-    marginTop: 40,
-    justifyContent: 'flex-end',
-    display: 'flex',
-  },
-  button: {
-    marginLeft: 20,
-  },
-});
-
 // component
 export const UserForm = ({ setForm, form }) => {
-  const classes = useStyles();
+  const classes = styles();
 
   return (
     <Formik
@@ -56,7 +40,7 @@ export const UserForm = ({ setForm, form }) => {
         resetForm();
       }}
     >
-      {({ handleSubmit, values, errors, handleChange }) => (
+      {({ handleSubmit, errors }) => (
         <Form
           onSubmit={(e) => {
             e.preventDefault();
