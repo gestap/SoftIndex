@@ -13,7 +13,7 @@ import { SimpleTable } from './components/SimpleTable';
 // component
 const App = () => {
   const [form, setForm] = useState(
-    JSON.parse(localStorage.getItem('formData')),
+    JSON.parse(localStorage.getItem('formData')) || [],
   );
 
   const useStyles = makeStyles({

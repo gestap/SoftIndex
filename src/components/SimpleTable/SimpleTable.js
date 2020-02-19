@@ -69,11 +69,11 @@ export const SimpleTable = ({ form, setForm }) => {
 
   return (
     <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
+      <Table className={classes.table}>
         <TableHeader
           order={order}
           orderBy={orderBy}
-          sort={handleRequestSort}
+          handleSort={handleRequestSort}
         />
         <TableBody>
           {rows.map(row => (

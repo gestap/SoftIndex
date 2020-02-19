@@ -68,50 +68,49 @@ export const UserForm = ({ setForm, form }) => {
             component={TextField}
             name="firstName"
             label="First Name"
-            type="text"
             error={!!errors?.firstName || null}
-            fullWidth
             helperText={errors?.firstName}
+            fullWidth
             margin="normal"
           />
           <Field
             component={TextField}
-            error={!!errors?.lastName || null}
-            label="Last Name"
             name="lastName"
-            fullWidth
+            label="Last Name"
+            error={!!errors?.lastName || null}
             helperText={errors?.lastName}
+            fullWidth
             margin="normal"
           />
           <Field
-            error={!!errors?.phone || null}
-            label="Phone"
-            name="phone"
-            fullWidth
-            helperText={errors?.phone}
-            margin="normal"
             component={PhoneField}
+            name="phone"
+            label="Phone"
+            error={!!errors?.phone || null}
+            helperText={errors?.phone}
+            fullWidth
+            margin="normal"
           />
           <Field
             component={TextField}
-            error={!!errors?.age || null}
             label="Age"
             name="age"
             type="number"
-            fullWidth
+            error={!!errors?.age || null}
             helperText={errors?.age}
+            fullWidth
             margin="normal"
           />
           <Field
-            className={classes.select}
             component={TextField}
-            error={!!errors?.gender || null}
-            select
             label="Please select your gender"
             name="gender"
-            value={values.gender}
-            onChange={handleChange}
+            select
+            // value={values.gender}
+            // onChange={handleChange}
+            error={!!errors?.gender || null}
             helperText={errors?.gender}
+            className={classes.select}
             margin="normal"
           >
             <MenuItem value>

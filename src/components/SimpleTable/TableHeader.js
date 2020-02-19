@@ -11,9 +11,9 @@ import {
 } from '@material-ui/core';
 
 // component
-export const TableHeader = ({ sort, order, orderBy }) => {
+export const TableHeader = ({ handleSort, order, orderBy }) => {
   const createSortHandler = property => (event) => {
-    sort(event, property.id);
+    handleSort(event, property.id);
   };
 
   const headerCell = [
@@ -59,7 +59,7 @@ export const TableHeader = ({ sort, order, orderBy }) => {
 };
 
 TableHeader.propTypes = {
-  sort: PropTypes.func.isRequired,
+  handleSort: PropTypes.func.isRequired,
   order: PropTypes.oneOf(['asc', 'desc']).isRequired,
   orderBy: PropTypes.string.isRequired,
 };
